@@ -1,0 +1,105 @@
+var hitter,carrom1,carrom2,carrom3,carromw4,carrom5,carrom6,carrom7,carrom8,carrom9,carrom10,carrom11,carrom12,edges,wall1,wall2,wall3,wall4;
+function setup()
+{
+  createCanvas(400,400);
+ hitter=createSprite(200,300,20,20);
+  carrom1=createSprite(260,200,10,10);
+  carrom2=createSprite(250,210,10,10);
+  carrom3=createSprite(240,220,10,10);
+  carrom4=createSprite(230,230,10,10);
+  carrom5=createSprite(250,190,10,10);
+  carrom6=createSprite(240,180,10,10);
+  carrom7=createSprite(230,190,10,10);
+  carrom8=createSprite(220,180,10,10);
+  carrom9=createSprite(210,190,10,10);
+  carrom10=createSprite(200,200,10,10);
+  carrom11=createSprite(210,210,10,10);
+  carrom12=createSprite(220,220,10,10);
+  edges=createEdgeSprites();
+  wall1=createSprite(10,200,10,340);
+  wall2=createSprite(380,200,10,340);
+ 
+  
+}
+function draw()
+{
+  
+ background("black");
+  if(keyWentDown("left"))
+     {
+     hitter.velocityX=-4
+     hitter.velocityY=0
+     hitter.shapeColor="red"
+     }
+  if(keyWentUp("left"))
+  {
+    hitter.velocityX=0
+    hitter.velocityY=0
+    hitter.shapeColor="blue"
+  }
+  if(keyWentDown("right"))
+    {
+      hitter.velocityX=4
+      hitter.velocityY=0
+      hitter.shapeColor="yellow"
+    }
+    if(keyWentUp("right"))
+    {
+      hitter.velocityX=0
+      hitter.velocityY=0
+      hitter.shapeColor="green"
+    }
+     if(keyWentDown("up"))
+    {
+      hitter.velocityX=0
+      hitter.velocityY=-4
+      hitter.shapeColor="#CFB53B"
+    }
+    if(keyWentUp("up"))
+    {
+      hitter.velocityX=0
+      hitter.velocityY=0
+      hitter.shapeColor="#C0C0C0"
+    }
+  if(keyWentDown("down"))
+    {
+      hitter.velocityX=0
+      hitter.velocityY=4
+      hitter.shapeColor="#eb4924"
+    }
+    if(keyWentUp("down"))
+    {
+      hitter.velocityX=0
+      hitter.velocityY=0
+      hitter.shapeColor="#25D366"
+    }
+  hitter.bounceOff(edges);
+  hitter.bounce(carrom1);
+  hitter.bounce(carrom2);
+  hitter.bounce(carrom3);
+  hitter.bounce(carrom4);
+  hitter.bounce(carrom5);
+  hitter.bounce(carrom6);
+  hitter.bounce(carrom7);
+  hitter.bounce(carrom8);
+  hitter.bounce(carrom9);
+  hitter.bounce(carrom10);
+  hitter.bounce(carrom11);
+  hitter.bounce(carrom12);
+  
+  
+  carrom1.bounceOff(wall1);
+  carrom2.bounceOff(wall1);
+  carrom3.bounceOff(wall1);
+  carrom4.bounceOff(wall1);
+  carrom5.bounceOff(wall1);
+  carrom6.bounceOff(wall1);
+  carrom7.bounceOff(wall1);
+  carrom8.bounceOff(wall1);
+  carrom9.bounceOff(wall1);
+  carrom10.bounceOff(wall1);
+  carrom11.bounceOff(wall1);
+  carrom12.bounceOff(wall1);
+  
+  drawSprites()
+}
